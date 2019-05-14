@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      var scrollY = 0;
+      var distance = 40;
+      var speed = 24;
+      function autoScrollTo(el) {
+          var currentY = window.pageYOffset;
+          var targetY = document.getElementById(el).offsetTop;
+          var bodyHeight = document.body.offsetHeight;
+          var yPos = currentY + window.innerHeight;
+          var animator = setTimeout('autoScrollTo(\''+el+'\')',24);
+          if(yPos > bodyHeight) {
+            clearTimeout(animator);
+          }else {
+            if(currentY < targetY-distance) {
+              scrollY = currentY+distance;
+              window.scroll(0, scrollY);
+            } else {
+              clearTimeout(animator);
+            }
+          }
+      }
+      function resetScroller(el){
+        var currentY = window.pageYOffset;
+        var targetY = document.getElementById(el).offsetTop;
+        var animator = setTimeout('resetScroller(\''+el+'\')',5);
+        if(currentY > targetY){
+          scrollY = currentY-distance;
+          window.scroll(0, scrollY);
+        } else {
+          clearTimeout(animator);
+        }
+      }
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+
+    <!-- My CSS -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Interaksi Manusia Komputer</title>
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container" id="myheading">
+        <a class="navbar-brand" href="#">Inmako</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#" onclick="return false;" onmousedown="autoScrollTo('konten1');">Pricing</a>
+            <a class="nav-item nav-link" href="#" onclick="return false;" onmousedown="autoScrollTo('konten2');">Features</a>
+            <a class="nav-item nav-link" href="#" onclick="return false;" onmousedown="autoScrollTo('konten');">About</a>
+            <button onclick="document.getElementById('modal-wrapper').style.display='block'" class="btn btn-primary nav-item but">Join Us</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Akhir Navbar -->
+
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4"><span>Ease</span> of getting tickets <br>with just <span>one click</span></h1>
+        <a href="" class="btn btn-primary tombol">Enter Now</a>
+      </div>
+    </div>
+    <!-- Akhir Jumbotron -->
+
+
+    <!-- Container -->
+
+    <div class="container">
+
+      <!-- info panel -->
+
+      <div class="row justify-content-center">
+        <div class="col-10 info-panel">
+          <div class="row">
+            <div class="col-lg">
+              <img src="img/jam.png" alt="Pelayanan" class="float-left"> 
+              <h4>24 Hours</h4>
+              <p>Kapanpun kami siap melayani anda</p>
+           </div>
+           <div class="col-lg">
+              <img src="img/air.png" alt="air" class="float-left"> 
+              <h4>On Schedule</h4>
+              <p>Memberikan layanan ticketing sesuai waktu yang dipilih</p>
+           </div>
+           <div class="col-lg">
+              <img src="img/aman.png" alt="security" class="float-left"> 
+              <h4>Security</h4>
+              <p>Jaminan keamanan untuk pembelian sebuah tiket</p>
+           </div>                
+          </div>      
+        </div>
+      </div>
+
+      <!-- Akhir info panel -->
+      
+
+      <!-- Jendela Kerja -->
+      <div class="row workingspace"  id="konten2">
+        <div class="col-lg-6">
+          <img src="img/workingspace.png" alt="workingspace" class="img-fluid">
+        </div>
+        <div class="col-lg-5">
+          <h3>You <span>work</span> like at <span>home</span></h3>
+          <p>Bekerja dengan suasana hati yang lebih asik dan mempelajari hal baru setiap harinya</p>
+          <a href="" class="btn btn-primary tombol">Gallery</a>
+        </div>
+      </div>
+      <!-- Akhir Jendela Kerja -->
+
+      <!-- Jendela Kerja -->
+      <div class="row workingspace">
+        <div class="col-lg-5">
+          <h3 class="po"><span>Easy</span> to going <span>anywhere</span></h3>
+          <p class="po">Easy traveling anywhere with just one click</p>
+          <a href="" class="btn btn-primary po"> Get Strated</a>
+        </div>
+        <div class="col-lg-6">
+          <img src="img/konten.jpg" alt="workingspace" class="img-fluid rounded float-left br">
+        </div>
+      </div>
+      <!-- Akhir Jendela Kerja -->
+
+
+      <!-- Pricing -->
+      <section class="text">
+        <div id="konten1" class="row justify-content-center">
+          <div class="col-lg">
+            <h2>PRICING</h2>
+          </div>
+        </div>
+      </section>
+
+            <div class="row justify-content-center">
+        <div class="col-8 info-panel-pricing">
+          <div class="row">
+            <div class="col-lg tabel">
+              <h3>Personal</h3>
+              <h4>Bandung-Jakarta</h4>
+              <h5>Ekonomi</h5><br>
+              <h5>Rp.1.226.000-4.000.000</h5><br>
+              <a href="" class="btn btn-primary po">Add To Cart</a>
+           </div>
+           <div class="col-lg tabel">
+              <h3>Paket 2 Orang</h3>
+              <h4>Bandung-Jakarta</h4>
+              <h5>Ekonomi</h5><br>
+              <h5>Rp.2.226.000-6.000.000</h5><br>
+              <a href="" class="btn btn-primary po">Add To Cart</a>
+           </div>              
+          </div>      
+        </div>
+      </div>
+
+      <!-- Akhir Pricing -->
+
+
+
+    
+      <!-- Tester -->
+      <section class="tester">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h5>“Bepergian membuat orang sederhana. Anda melihat betapa kecilnya tempat yang anda tempati di dunia.”</h5>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 justify-content-center d-flex">
+            <figure class="figure">
+              <img src="img/img1.png" class="figure-img img-fluid rounded-circle" alt="profil2">
+            </figure>
+            <figure class="figure">
+              <img src="img/img2.jpg" class="figure-img img-fluid rounded-circle utm" alt="profil">
+              <figcaption class="figure-caption">
+                <h5>Gustav Flaubert</h5>
+                <p>Writer</p>
+              </figcaption>
+            </figure>
+             <figure class="figure">
+              <img src="img/img3.png" class="figure-img img-fluid rounded-circle" alt="profil3">
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- Akhir Tester -->
+
+      <!-- Top -->
+      <div align="center">
+      <a href="#" onclick="return false;" onmousedown="resetScroller('myheading');"> Back To Top</a>
+      </div>
+      <!-- Reset to top -->
+
+
+
+      <!-- Footer -->
+      <div class="row footer-about" id="konten">
+        <div class="col text-center">
+          <div>
+            <div>
+              <h3>About Us</h3>
+              <h5>Universitas Siliwangi</h5>
+              <h5>Teknik Informatika</h5>
+            </div>
+          </div>
+          <p>2019 All Right Reserved by Inmako</p>
+        </div>
+      </div>
+      <!-- Akhir Footer -->
+
+
+
+    <!-- Akhir Container -->
+
+    <!-- Popup -->
+
+    <div id="modal-wrapper" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php">
+            
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+          <img src="1.png" alt="Avatar" class="avatar">
+          <h1 style="text-align:center">Register</h1>
+        </div>
+
+        <div class="container col-lg">
+          <input type="text" placeholder="Enter Name" name="name">
+          <input type="text" placeholder="Enter Username" name="uname">
+          <input type="password" placeholder="Enter Password" name="psw">
+          <input type="password" placeholder="Re-Type Password" name="re-psw">         
+          <button type="submit" class="pos">Register</button>
+          <input type="checkbox" style="margin:26px 30px;"> Remember me      
+        </div>
+        
+      </form>
+      
+    </div>
+
+    <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+
+    var modal = document.getElementById('modal-wrapper');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <!-- Akhir Popup -->
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
